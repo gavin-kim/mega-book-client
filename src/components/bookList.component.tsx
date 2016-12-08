@@ -1,13 +1,5 @@
 import * as React from "react";
-
-export interface Review {
-    id: number,
-    reviewerName: string,
-    reviewDate: Date,
-    content: string,
-    rating: number,
-    bookId: number
-}
+import {Review} from "./reviewList.component";
 
 export interface Book {
     id: number,
