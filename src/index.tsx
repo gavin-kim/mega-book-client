@@ -4,6 +4,7 @@ import * as ReactDOM from "react-dom";
 // import Hello component from ./component/init.tsx (export Hello)
 import {BookList, Book} from "./components/bookList.component";
 import {NavBar} from "./components/navBar.component";
+import {AddBook} from "./components/addBook.component";
 
 let books : any;
 
@@ -45,6 +46,11 @@ function init() {
             );
         }
     });
+
+    ReactDOM.render(
+        <AddBook />,
+        document.querySelector("#addBookTest")
+    );
 }
 
 init();
