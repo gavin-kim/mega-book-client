@@ -11,7 +11,6 @@ var ReviewList = (function (_super) {
         return _super.apply(this, arguments) || this;
     }
     ReviewList.prototype.render = function () {
-        var avgRating = 0;
         var totalRating = 0;
         var list = Array();
         this.props.reviews.forEach(function (review) {
@@ -27,7 +26,7 @@ var ReviewList = (function (_super) {
                     React.createElement("small", null, new Date(review.reviewDate).toDateString())),
                 React.createElement("p", null, review.content)));
         });
-        avgRating = totalRating / list.length;
+        var avgRating = totalRating / list.length;
         return React.createElement("div", { className: "well review-container" },
             React.createElement("h2", null,
                 " Average Rating: ",

@@ -4,6 +4,7 @@ var ReactDOM = require("react-dom");
 // import Hello component from ./component/init.tsx (export Hello)
 var bookList_component_1 = require("./components/bookList.component");
 var navBar_component_1 = require("./components/navBar.component");
+var addBook_component_1 = require("./components/addBook.component");
 var books;
 /**
  * Send AJAX GET HttpRequest.
@@ -29,6 +30,7 @@ function init() {
             ReactDOM.render(React.createElement(bookList_component_1.BookList, { books: books }), document.querySelector("#main"));
         }
     });
+    ReactDOM.render(React.createElement(addBook_component_1.AddBook, null), document.querySelector("#addBookTest"));
 }
 init();
 //# sourceMappingURL=index.js.map
