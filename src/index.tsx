@@ -46,11 +46,6 @@ function init() {
             );
         }
     });
-
-    ReactDOM.render(
-        <AddBook />,
-        document.querySelector("#addBookTest")
-    );
 }
 
 init();

@@ -2,7 +2,7 @@
   "name": "first",
   "version": "1.0.0",
   "description": "",
-  "main": "init.js",
+  "main": "index.js",
   "dependencies": {
     "@types/react": "^0.14.54",
     "@types/react-dom": "^0.14.19",

@@ -76,7 +76,7 @@
 	            ReactDOM.render(React.createElement(bookList_component_1.BookList, { books: books }), document.querySelector("#main"));
 	        }
 	    });
-	    ReactDOM.render(React.createElement(addBook_component_1.AddBook, null), document.querySelector("#addBookTest"));
+	    ReactDOM.render(React.createElement(addBook_component_1.AddBook, null), document.querySelector("#main"));
 	}
 	init();
 
