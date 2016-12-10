@@ -15,22 +15,22 @@ var ReviewList = (function (_super) {
         var list = Array();
         this.props.reviews.forEach(function (review) {
             totalRating += review.rating;
-            list.push(React.createElement("div", { className: "well review-item" },
-                React.createElement("h3", null,
+            list.push(React.createElement("div", { className: "well well-sm review-item" },
+                React.createElement("h5", null,
                     "Rating: ",
                     review.rating),
-                React.createElement("h3", null,
+                React.createElement("div", null,
                     "- ",
                     review.reviewerName,
                     " ",
                     React.createElement("small", null, new Date(review.reviewDate).toDateString())),
-                React.createElement("p", null, review.content)));
+                React.createElement("div", null, review.content)));
         });
         var avgRating = totalRating / list.length;
-        return React.createElement("div", { className: "well review-container" },
-            React.createElement("h2", null,
+        return React.createElement("div", { className: "well well-sm review-container" },
+            React.createElement("h4", null,
                 " Average Rating: ",
-                avgRating,
+                Number.NaN == avgRating ? 0 : avgRating,
                 ", ",
                 list.length,
                 " reviews"),

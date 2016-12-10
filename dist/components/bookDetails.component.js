@@ -12,14 +12,16 @@ var BookDetails = (function (_super) {
         return _super.apply(this, arguments) || this;
     }
     BookDetails.prototype.render = function () {
-        return <div>
-            <h1 className="book-details-title">{this.props.book.name} -
-                <small>{new Date(this.props.book.releaseDate).toDateString()}</small>
-            </h1>
-            <div className="boot-details-content">{this.props.book.content}</div>
-            <reviewList_component_1.ReviewList reviews={this.props.book.reviews}/>
-        </div>;
+        return React.createElement("div", null,
+            React.createElement("div", { className: "page-header" },
+                React.createElement("h1", { className: "book-details-title" },
+                    this.props.book.name,
+                    "  -",
+                    React.createElement("small", null, new Date(this.props.book.releaseDate).toDateString()))),
+            React.createElement("div", { className: "boot-details-content well well-sm" }, this.props.book.content),
+            React.createElement(reviewList_component_1.ReviewList, { reviews: this.props.book.Reviews }));
     };
     return BookDetails;
 }(React.Component));
 exports.BookDetails = BookDetails;
+//# sourceMappingURL=bookDetails.component.js.map

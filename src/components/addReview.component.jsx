@@ -1,11 +1,17 @@
-import * as React from "react"
-
-export interface AddReviewProps {
-}
-export class AddReview extends React.Component<AddReviewProps, {}> {
-    render() {
-        return (
-            <div className="modal fade" id="myModal" role="dialog">
+"use strict";
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var React = require("react");
+var AddReview = (function (_super) {
+    __extends(AddReview, _super);
+    function AddReview() {
+        return _super.apply(this, arguments) || this;
+    }
+    AddReview.prototype.render = function () {
+        return (<div className="modal fade" id="myModal" role="dialog">
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">
@@ -16,15 +22,15 @@ export class AddReview extends React.Component<AddReviewProps, {}> {
                             <form className="form-group">
                                 <div className="row form-group">
                                     <label>Reviewer Name:</label>
-                                    <input className="form-control" id="reviewerName" type="text" />
+                                    <input className="form-control" id="reviewerName" type="text"/>
                                 </div>
                                 <div className="row form-group">
                                     <label>Content:</label>
-                                    <input className="form-control" id="reviewerContent" type="text" />
+                                    <input className="form-control" id="reviewerContent" type="text"/>
                                 </div>
                                 <div className="form-group">
                                     <label>Rating:</label>
-                                    <select className="form-control" id="rating" >
+                                    <select className="form-control" id="rating">
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -45,7 +51,8 @@ export class AddReview extends React.Component<AddReviewProps, {}> {
                         </div>
                     </div>
                 </div>
-            </div>
-        )
-    }
-}
+            </div>);
+    };
+    return AddReview;
+}(React.Component));
+exports.AddReview = AddReview;

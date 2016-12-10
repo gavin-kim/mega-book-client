@@ -4,53 +4,67 @@ import * as ReactDOM from "react-dom";
 // import Hello component from ./component/init.tsx (export Hello)
 import {BookList, Book} from "./components/bookList.component";
 import {NavBar} from "./components/navBar.component";
-import {AddBook} from "./components/addBook.component";
-
-let books : any;
+import {AddReview} from "./components/addReview.component";
 
 
-/**
- * Send AJAX GET HttpRequest.
- * When a html file is load, invoke function
- *
- * @param url a html file path
- * @param func function to invoke when it's loaded
- */
+export  interface RootProps {
 
-function loadHtml(url : string, func : any) {
-    let xhr = new XMLHttpRequest();
+}
 
-    xhr.addEventListener("load", func);
+export class Root extends React.Component<RootProps, {} > {
 
-    // method, url, async : All file must be loaded before page is created
-    xhr.open("GET", url, true);
-    xhr.setRequestHeader("cache-control", "no-cache");
-    xhr.send();
+    static books : Array<Book>;
+
+    constructor(props: RootProps) {
+        super(props);
+        this.requestBookList(this.renderBookList);
+    }
+
+    requestBookList = (func: any) => {
+        let xhr = new XMLHttpRequest();
+
+        xhr.addEventListener("load", (ev: any) => {this.responseHandler(ev, func)});
+        // method, url, async : All file must be loaded before page is created
+        xhr.open("GET", "http://mega-book.azurewebsites.net/api/book", true);
+        xhr.send();
+    };
+
+    responseHandler = (ev: any, func: any) => {
+
+        if (ev.target.status == 200) {
+            Root.books = JSON.parse(ev.target.response);
+
+            if (func)
+                func();
+        }
+    };
+
+    renderBookList = () => {
+
+        console.log(Root.books);
+
+        ReactDOM.unmountComponentAtNode(document.querySelector("#content"));
+        ReactDOM.render(
+            <BookList books={Root.books} />,
+            document.querySelector("#content")
+        );
+    };
+
+    render() {
+        return <div>
+            <NavBar title="Mega Book" root={this}/>
+            <div id="content" className="container"></div>
+            <AddReview />
+        </div>
+    }
 }
 
 function init() {
 
     ReactDOM.render(
-        <NavBar title="Mega Book"/>,
-        document.querySelector("#nav")
-    );
-
-    loadHtml("http://mega-book.azurewebsites.net/api/book", function() {
-        if (this.status == 200) {
-            console.log(this);
-            books = JSON.parse(this.response);
-
-            ReactDOM.render(
-                <BookList books={books}/>,
-                document.querySelector("#main")
-            );
-        }
-    });
-
-    ReactDOM.render(
-        <AddBook />,
-        document.querySelector("#addBookTest")
-    );
+        <Root />,
+        document.querySelector("#root")
+    )
 }
 
 init();

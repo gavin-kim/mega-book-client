@@ -1,7 +1,7 @@
 module.exports = {
     entry: "./src/index.tsx",
     output: {
-        filename: "first.js",
+        filename: "index.js",
         path: __dirname + "/dist"
     },
 
