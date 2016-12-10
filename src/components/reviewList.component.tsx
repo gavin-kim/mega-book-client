@@ -32,10 +32,11 @@ export class ReviewList extends React.Component<ReviewListProps, {} > {
             );
         });
 
-        let avgRating = totalRating / list.length;
+        let avg = totalRating / list.length;
+        avg = Number.NaN == avg ? 0 : avg;
 
         return <div className="well well-sm review-container">
-            <h4> Average Rating: {Number.NaN == avgRating ? 0 : avgRating}, {list.length} reviews</h4>
+            <h4> Average Rating: {avg}, {list.length} reviews</h4>
             <div className="review-items">{list}</div>
         </div>;
     }

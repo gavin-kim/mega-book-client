@@ -5,22 +5,22 @@ export interface AddReviewProps {
 export class AddReview extends React.Component<AddReviewProps, {}> {
     render() {
         return (
-            <div className="modal fade" id="myModal" role="dialog">
-                <div className="modal-dialog">
+            <div className="modal fade" id="modal-add-review" role="dialog">
+                <div className="modal-dialog" role="document">
                     <div className="modal-content">
                         <div className="modal-header">
                             <button type="button" className="close" data-dismiss="modal">&times;</button>
                             <h4 className="modal-title">Add Review</h4>
                         </div>
                         <div className="modal-body">
-                            <form className="form-group">
-                                <div className="row form-group">
+                            <form>
+                                <div className="form-group">
                                     <label>Reviewer Name:</label>
-                                    <input className="form-control" id="reviewerName" type="text" />
+                                    <input className="form-control" id="reviewer-name" type="text" />
                                 </div>
-                                <div className="row form-group">
+                                <div className="form-group">
                                     <label>Content:</label>
-                                    <input className="form-control" id="reviewerContent" type="text" />
+                                    <input className="form-control" id="content" type="text" />
                                 </div>
                                 <div className="form-group">
                                     <label>Rating:</label>
@@ -37,9 +37,8 @@ export class AddReview extends React.Component<AddReviewProps, {}> {
                                         <option>10</option>
                                     </select>
                                 </div>
-                                <div className="row form-group">
-                                    <button type="submit" className="btn btn-default">Submit</button>
-                                    <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+                                <div className="form-group">
+                                    <button type="submit" className="btn btn-info">Submit</button>
                                 </div>
                             </form>
                         </div>

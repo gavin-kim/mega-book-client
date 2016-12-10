@@ -15,6 +15,9 @@ export class BookDetails extends React.Component<BookDetailsProps, {} > {
                 </h1>
             </div>
             <div className="boot-details-content well well-sm">{this.props.book.content}</div>
+            <hr />
+            <button data-toggle="modal" data-target="#modal-add-review" type="button" className="btn btn-warning" >Add Review</button>
+            <br/>
             <ReviewList reviews={this.props.book.Reviews} />
         </div>
     }

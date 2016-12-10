@@ -11,20 +11,20 @@ var AddReview = (function (_super) {
         return _super.apply(this, arguments) || this;
     }
     AddReview.prototype.render = function () {
-        return (React.createElement("div", { className: "modal fade", id: "myModal", role: "dialog" },
-            React.createElement("div", { className: "modal-dialog" },
+        return (React.createElement("div", { className: "modal fade", id: "modal-add-review", role: "dialog" },
+            React.createElement("div", { className: "modal-dialog", role: "document" },
                 React.createElement("div", { className: "modal-content" },
                     React.createElement("div", { className: "modal-header" },
                         React.createElement("button", { type: "button", className: "close", "data-dismiss": "modal" }, "\u00D7"),
                         React.createElement("h4", { className: "modal-title" }, "Add Review")),
                     React.createElement("div", { className: "modal-body" },
-                        React.createElement("form", { className: "form-group" },
-                            React.createElement("div", { className: "row form-group" },
+                        React.createElement("form", null,
+                            React.createElement("div", { className: "form-group" },
                                 React.createElement("label", null, "Reviewer Name:"),
-                                React.createElement("input", { className: "form-control", id: "reviewerName", type: "text" })),
-                            React.createElement("div", { className: "row form-group" },
+                                React.createElement("input", { className: "form-control", id: "reviewer-name", type: "text" })),
+                            React.createElement("div", { className: "form-group" },
                                 React.createElement("label", null, "Content:"),
-                                React.createElement("input", { className: "form-control", id: "reviewerContent", type: "text" })),
+                                React.createElement("input", { className: "form-control", id: "content", type: "text" })),
                             React.createElement("div", { className: "form-group" },
                                 React.createElement("label", null, "Rating:"),
                                 React.createElement("select", { className: "form-control", id: "rating" },
@@ -38,9 +38,8 @@ var AddReview = (function (_super) {
                                     React.createElement("option", null, "8"),
                                     React.createElement("option", null, "9"),
                                     React.createElement("option", null, "10"))),
-                            React.createElement("div", { className: "row form-group" },
-                                React.createElement("button", { type: "submit", className: "btn btn-default" }, "Submit"),
-                                React.createElement("button", { type: "button", className: "btn btn-default", "data-dismiss": "modal" }, "Close"))))))));
+                            React.createElement("div", { className: "form-group" },
+                                React.createElement("button", { type: "submit", className: "btn btn-info" }, "Submit"))))))));
     };
     return AddReview;
 }(React.Component));

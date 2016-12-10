@@ -99,7 +99,7 @@ export class AddBook extends React.Component<AddBookProps, {}> {
                     <div className="row form-group">
                         <div className="col-xs-2"></div>
                         <div className="col-xs-2"><label>ISBN:</label></div>
-                        <div className="col-xs-6"><input value={bookISBN} onChange={(ev) => this.bookISBNChange(ev)} className="form-control" id="isbn" type="text" /></div>
+                        <div className="col-xs-6"><input value={bookISBN} onChange={(ev) => this.bookISBNChange(ev)} className="form-control" id="isbn" type="text"/></div>
                         <div className="col-xs-2"></div>
                     </div>
 

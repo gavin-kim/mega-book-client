@@ -26,11 +26,12 @@ var ReviewList = (function (_super) {
                     React.createElement("small", null, new Date(review.reviewDate).toDateString())),
                 React.createElement("div", null, review.content)));
         });
-        var avgRating = totalRating / list.length;
+        var avg = totalRating / list.length;
+        avg = Number.NaN == avg ? 0 : avg;
         return React.createElement("div", { className: "well well-sm review-container" },
             React.createElement("h4", null,
                 " Average Rating: ",
-                Number.NaN == avgRating ? 0 : avgRating,
+                avg,
                 ", ",
                 list.length,
                 " reviews"),

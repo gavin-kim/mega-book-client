@@ -19,6 +19,9 @@ var BookDetails = (function (_super) {
                     "  -",
                     React.createElement("small", null, new Date(this.props.book.releaseDate).toDateString()))),
             React.createElement("div", { className: "boot-details-content well well-sm" }, this.props.book.content),
+            React.createElement("hr", null),
+            React.createElement("button", { "data-toggle": "modal", "data-target": "#modal-add-review", type: "button", className: "btn btn-warning" }, "Add Review"),
+            React.createElement("br", null),
             React.createElement(reviewList_component_1.ReviewList, { reviews: this.props.book.Reviews }));
     };
     return BookDetails;
